@@ -1,0 +1,356 @@
+/*
+    Tema 10
+    24.9 - 12.10
+    984 112
+*/
+
+* {
+    box-sizing: border-box;
+    cursor: none;
+}
+
+*::-webkit-scrollbar { 
+    display: none; 
+}
+
+body {
+    margin: 0;
+    background-color: #000;
+    font-size: 16px;
+    color: white;
+    font-family: "helvetica neue";
+}
+
+#pointer {
+    pointer-events: none;
+    position: fixed;
+    left: 200px;
+    top: 200px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 11px solid rgba(151, 6, 6, 0.7);
+    z-index: 10000;
+}
+
+/* Stjerner, background */
+
+.stjerne {
+    background-color: rgba(255, 255, 255);
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    will-change: scroll-position;
+    position: fixed;
+    transition: 300s;
+}
+
+#bgmars {
+    position: fixed;
+    /*margin-left: 650px;*/
+    margin-top: -50px;
+}
+
+/* First section */
+
+section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+h3 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    animation-name: spacetext;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes spacetext {
+0% {
+    transform: skew(0);
+}
+50% {
+    transform: skew(20deg);
+}
+60% {
+    color: grey;
+}
+100% {
+    transform: skew(0);
+}
+}
+
+#ingress {
+    display: block;
+    margin: 2rem auto;
+    position: relative;
+    width: 40%;
+    /*border: 1px solid orange;*/
+    padding: 10px;
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+
+/* Scroll, front page */
+
+#scroll {
+    position: absolute;
+    display: block;
+    top: 600px;
+    text-align: center;
+    width: 100%;
+    font-weight: 300;
+}
+
+#line {
+    border-left: 1px solid white;
+    height: 50px;
+    position: absolute;
+    display: block;
+    left: 50%;
+    margin-left: -3px;
+    top: 30px;
+}
+
+article {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+/* Star Wars tekst */
+
+#sw {
+    /*display: none;*/
+    /*background-color: red;*/
+    position: absolute;
+    width: 90rem;
+    height: 120em;
+    bottom: 0;
+    /*margin: 0 auto;*/
+    font-size: 3.5rem;
+    text-align: justify;
+    overflow: hidden;
+    transform-origin: 50% 100%;
+    transform: perspective(300px) rotateX(20deg);
+}
+
+#sw:after {
+    position: absolute;
+    content: ' ';
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+
+#swtekst {
+    color: white;
+    position: absolute;
+    top: 100%;
+    margin-top: 400px;
+    font-weight: 100;
+}
+
+/* White section */
+
+#whitesquare {
+    background-color: rgba(255, 255, 255);
+    height: 600px;
+    width: 100vw;
+    overflow: auto;
+    margin-top: 250px;
+}
+
+h4 {
+    color: black;
+    font-size: 2rem;
+    font-weight: 100;
+    text-align: center;
+    margin-top: 5.5rem;
+    margin-bottom: 0;
+}
+
+#bildetekst {
+    color: black;
+    position: absolute;
+    display: inline-block;
+    font-weight: 300;
+    margin-top: 390px;
+    left: 350px;
+}
+
+#habitat {
+    /*border: 1px solid red;*/
+    display: block;
+    height: 400px;
+    margin-top: 6rem;
+    margin-left: 60px;
+    float: left;
+}
+
+#marsidag {
+    /*border: 1px solid red;*/
+    display: block;
+    float: left;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: 300;
+    margin-top: 3rem;
+    margin-left: 60px;
+}
+
+/* InSight */
+
+#insightsec {
+    height: 850px;
+}
+
+#insightsec > p {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 100;
+    margin-top: 4rem;
+}
+
+/* countdown */
+
+#iscd {
+    /*border: 3px solid red;*/
+    font-size: 1.5rem;
+    font-weight: 100;
+    width: 200px;
+    margin: 1.5rem auto;
+    text-align: center;
+    /*color: red;*/
+}
+
+#countdown {
+    /*border: 1px solid red;*/
+    width: 200px;
+    color: white;
+    font-size: 1.5rem;
+    color: red;
+}
+
+/* info */
+
+#insinfo {
+    /*border: 1px solid red;*/
+    width: 40%;
+    margin-top: 7rem;
+    margin-left: 150px;
+    font-size: 1.2rem;
+    font-weight: 300;
+    position: absolute;
+}
+
+#insight {
+    height: 400px;
+    position: absolute;
+    right: 150px;
+    top: 14rem;
+    animation-name: spin;
+    animation-duration: 100s;
+    animation-iteration-count: infinite;
+}
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*#insight:hover {
+    cursor: pointer;
+}*/
+
+#hotspot {
+    width: 200px;
+    margin: auto;
+}
+
+#hotspot:hover #iscd{
+    border: 1px solid red;
+}
+
+/* footer */
+
+#footer {
+    width: 100%;
+    background-color: rgba(255, 255, 255);
+    height: 100px;
+    bottom: 0;
+    position: absolute;
+}
+
+#foottext {
+    position: absolute;
+    color: black;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding-left: 30px;
+    display: inline-block;
+    margin-top: 45px;
+    letter-spacing: 1.1px;
+}
+
+.img {
+    display: inline-block;
+    margin-top: 20px;
+}
+
+#en {
+    margin-left: 850px;
+    height: 45px;
+    display: inline-block;
+    margin-right: 35px;
+    margin-bottom: 13px;
+    filter: grayscale(100%);
+}
+
+#to {
+    height: 30px;
+    margin-bottom: 20px;
+    display: inline-block;
+    right: 0;
+    margin-right: 35px;
+    filter: grayscale(100%);
+}
+
+#tre {
+    height: 70px;
+    display: inline-block;
+    filter: grayscale(100%);
+}
+
+#en:hover {
+    filter: none;
+    /*cursor: pointer;*/
+}
+
+#to:hover {
+    filter: none;
+    /*cursor: pointer;*/
+}
+
+#tre:hover {
+    filter: none;
+    /*cursor: pointer;*/
+}
